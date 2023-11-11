@@ -31,6 +31,9 @@ public class TCPServer1 {
                 outToClient = new DataOutputStream(socket.getOutputStream());
                 while (true) {
                     String clientMessage = inFromClient.readLine();
+                    if (clientMessage == null) {
+                        break;
+                    }
                     System.out.println("FROM CLIENT: " + clientMessage);
 
                     // 계산기 로직 추가
