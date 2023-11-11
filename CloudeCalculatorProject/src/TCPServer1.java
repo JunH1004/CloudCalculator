@@ -31,10 +31,6 @@ public class TCPServer1 {
                 outToClient = new DataOutputStream(socket.getOutputStream());
                 while (true) {
                     String clientMessage = inFromClient.readLine();
-                    if (clientMessage.equalsIgnoreCase("bye")) {
-                        System.out.println("클라이언트에서 연결을 종료하였음");
-                        break; // "bye"를 받으면 연결 종료
-                    }
                     System.out.println("FROM CLIENT: " + clientMessage);
 
                     // 계산기 로직 추가
