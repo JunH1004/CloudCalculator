@@ -25,8 +25,11 @@ public class TCPClient1 {
             while (true) {
                 System.out.print("Enter the operation (e.g., ADD 10 20): ");
                 String userMessage = inFromUser.readLine();
+                if (userMessage.equalsIgnoreCase("bye")) {
+                    System.out.println("Exiting the client.");
+                    break;
+                }
                 outToServer.writeBytes(userMessage + '\n');
-
                 String serverResponse = inFromServer.readLine();
                 displayResultOrError(serverResponse);
             }
