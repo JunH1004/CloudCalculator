@@ -36,7 +36,6 @@ public class TCPServer1 {
                     }
                     System.out.println("FROM CLIENT: " + clientMessage);
 
-                    // 계산기 로직 추가
                     String response = calculate(clientMessage);
 
                     // 결과 또는 에러를 클라이언트에게 전송
@@ -55,7 +54,6 @@ public class TCPServer1 {
         }
     }
     private static String calculate(String clientMessage) {
-        // 간단한 계산기 로직을 추가
         String[] tokens = clientMessage.split("\\s");
 
         if (tokens.length == 3) {
